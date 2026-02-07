@@ -10,7 +10,7 @@ const {
   vacate,
   signupuser,
   onlinepayment,
-} = require("../models/mongoSchema");
+} = require("./models/mongoSchema");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const axios = require("axios");
