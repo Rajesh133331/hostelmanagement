@@ -46,6 +46,9 @@ function authenticateToken(req, res, next) {
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../views/userlogin.html"));
 });
+app.get("/userlogin",(req,res)=>{
+  res.sendFile(path.join(__dirname, "../views/userlogin.html"));
+});
 
 app.get("/adminlogin", (req, res) => {
   res.sendFile(path.join(__dirname, "../views/adminlogin.html"));
