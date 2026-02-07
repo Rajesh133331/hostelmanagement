@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const api = express.Router();
-app.use("/api", api);
 const {
   adminuser,
   otpverify,
@@ -23,6 +22,8 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.use(cors());
 require("dotenv").config();
 app.use(express.json());
+
+app.use("/api", api);
 
 //authentication
 function authenticateToken(req, res, next) {
