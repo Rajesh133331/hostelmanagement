@@ -139,7 +139,7 @@ api.post("/loginaccount", async (req, res) => {
       } else {
         await otpverify.updateOne({ Email }, { $inc: { Count: 1 } });
         if ((otp?.Count ?? 0) + 1 >= 3) {
-          await user.updateOne({ Email }, { $set: { Status: false } });
+          await adminuser.updateOne({ Email }, { $set: { Status: false } });
           await otpverify.deleteOne({ Email });
           return res.json({ data: "noattempts" });
         } else {
