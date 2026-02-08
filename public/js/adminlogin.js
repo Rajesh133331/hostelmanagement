@@ -94,7 +94,7 @@ function login(event) {
   let inp2 = document.getElementById("2").value;
   let inp3 = document.getElementById("3").value;
   let inp4 = document.getElementById("4").value;
-  let otp = inp1 + inp2 + inp3 + inp4;
+  let otp = str(inp1) + str(inp2) + str(inp3) + str(inp4);
   let obj = {
     Email: email,
     Otp: otp,
