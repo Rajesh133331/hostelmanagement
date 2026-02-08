@@ -103,7 +103,7 @@ api.post("/userverifylogin", async (req, res) => {
 
     sendSmtpEmail.sender = { name: "Verification", email: senderEmail };
     sendSmtpEmail.to = [{ email: recipientEmail }];
-    sendSmtpEmail.subject = "Campus Cove Hostels";
+    sendSmtpEmail.subject = "Admin Otp Verification";
     sendSmtpEmail.htmlContent = `<p>Your otp password is ${otp}</p>`;
 
     const data = await apiInstance.sendTransacEmail(sendSmtpEmail);
@@ -117,9 +117,6 @@ api.post("/userverifylogin", async (req, res) => {
   }
 });
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../../frontend/login/userlogin.html"));
-});
 
 //login into account
 api.post("/loginaccount", async (req, res) => {
