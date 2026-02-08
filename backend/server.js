@@ -70,9 +70,6 @@ app.get("/usersignup", (req, res) => {
   res.sendFile(path.join(__dirname, "../views/usersignup.html"));
 });
 
-app.get("*",(req,res)=>{
-  res.sendFile(path.join(__dirname, "../views/urlnotfound.html"));
-})
 
 
 
@@ -675,6 +672,9 @@ api.get("/download", (req, res) => {
     console.log(err.message);
   }
 });
+app.all("/*",(req,res)=>{
+  res.sendFile(path.join(__dirname, "../views/urlnotfound.html"));
+})
 const PORT = process.env.PORT
 app.listen(PORT, (err) => {
   if (err) {
