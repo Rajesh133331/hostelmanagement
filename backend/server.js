@@ -672,9 +672,11 @@ api.get("/download", (req, res) => {
     console.log(err.message);
   }
 });
-app.all("/*",(req,res)=>{
-  res.sendFile(path.join(__dirname, "../views/urlnotfound.html"));
-})
+app.use((req, res) => {
+  res.status(404).sendFile(
+    path.join(__dirname, "../views/urlnotfound.html")
+  );
+});
 const PORT = process.env.PORT
 app.listen(PORT, (err) => {
   if (err) {
