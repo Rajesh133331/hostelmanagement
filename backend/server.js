@@ -70,6 +70,10 @@ app.get("/usersignup", (req, res) => {
   res.sendFile(path.join(__dirname, "../views/usersignup.html"));
 });
 
+app.get("*",(req,res)=>{
+  res.sendFile(path.join(__dirname, "../views/urlnotfound.html"));
+})
+
 
 
 //login otp verify
