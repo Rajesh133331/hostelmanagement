@@ -180,11 +180,19 @@ tbody tr:hover{background:#f3f6ff}
 h3{margin:0 0 12px;font-size:18px}
 b{color:#fff}
 
+/* payment record delete btn */
+
+.payment-delete-btn{
+  backgroubd-color:red;
+  color:white;
+}
+
 /* responsive */
 @media (max-width:1024px){
   nav{width:200px}
   #addMember,#memberList,#payment,#roomCount,#dayWise,#monthPayments,#pendingMembers,#dashboard,#payment-history,#vacatedmembersList{margin-left:220px}
 }
+
 @media (max-width:780px){
   nav{position:static;width:auto;height:auto;background:#0f172a;margin:52px 14px 10px;border-radius:10px}
   nav a{display:inline-block}
