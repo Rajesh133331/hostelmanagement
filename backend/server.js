@@ -672,6 +672,19 @@ api.get("/download", (req, res) => {
     console.log(err.message);
   }
 });
+//payment delete record
+api.post("/api/deletepaymentrecord",authenticateToken,async(req,res)=>{
+try{
+    const {paymentid} = req.body;
+    await payment.deleteOne({ _id: paymentid });
+   return res.json({message:"success"})
+
+}
+  catch{
+   retun res.json({message:"failed"})
+  }
+  
+})
 app.use((req, res) => {
   res.status(404).sendFile(
     path.join(__dirname, "../views/urlnotfound.html")
