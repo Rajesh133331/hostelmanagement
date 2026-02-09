@@ -182,7 +182,7 @@ b{color:#fff}
 
 /* payment record delete btn */
 
-.payment-delete-btn{
+#payment-delete-btn{
   background-color:red;
   color:white;
 }
