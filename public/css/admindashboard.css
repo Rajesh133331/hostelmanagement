@@ -185,6 +185,8 @@ b{color:#fff}
 #payment-delete-btn{
   background-color:red;
   color:white;
+  padding: 1px 5px;
+  font-size: 10px;
 }
 
 /* responsive */
