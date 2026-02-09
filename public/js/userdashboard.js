@@ -10,6 +10,12 @@ window.addEventListener("load", () => {
 
 //logout function
 
+//default dashboard data showing
+window.addEventListener("load", () => {
+  showSection("dashboard");
+});
+
+
 function logout() {
   if (confirm("Are you sure to logout?")) {
     localStorage.removeItem("token");
@@ -88,7 +94,7 @@ function showSection(sectionId) {
   document.getElementById(sectionId).classList.remove("hidden");
   if (sectionId === "myprofile") {
     loadProfile();
-  } else if (sectionId == "payment") {
+  } else if (sectionId == "paymenthistory") {
     loadPaymentHistory();
   } else if (sectionId == "roomCount") {
     loadRoomMembers();
