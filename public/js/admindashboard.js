@@ -375,6 +375,7 @@ function fetchPaymentHistory() {
         deletePayment(p._id); // or transactionId
        }
        });
+        li.appendChild(btn)
         ul.appendChild(li);
       });
     })
