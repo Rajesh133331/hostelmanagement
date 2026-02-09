@@ -368,7 +368,7 @@ function fetchPaymentHistory() {
         } | ${p.TransactionId} | ${p.Mode} | `;
         const btn = document.createElement("button");
         btn.textContent = "Delete";
-        btn.className = "delete-btn";
+        btn.className = "payment-delete-btn";
 
        btn.addEventListener("click", () => {
        if (confirm("Delete this payment?")) {
