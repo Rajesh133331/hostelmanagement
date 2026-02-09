@@ -390,7 +390,7 @@ function deletePayment(paymentid){
   let token = localStorage.getItem("token")
   axios.post("/api/deletepaymentrecord",{paymentid},{
     headers:{
-      Authorization: "Bearer" + token
+      Authorization: "Bearer " + token
     }
   }).then((res) => {
     if (res.data.message === "success") {
