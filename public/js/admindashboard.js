@@ -365,7 +365,16 @@ function fetchPaymentHistory() {
         const li = document.createElement("li");
         li.textContent = `${p.Date.slice(0, 10)} | ${p.Month} | ₹${
           p.Amount
-        } | ${p.TransactionId} | ${p.Mode}`;
+        } | ${p.TransactionId} | ${p.Mode} | `;
+        const btn = document.createElement("button");
+        btn.textContent = "Delete";
+        btn.className = "delete-btn";
+
+       btn.addEventListener("click", () => {
+       if (confirm("Delete this payment?")) {
+        deletePayment(p._id); // or transactionId
+       }
+       });
         ul.appendChild(li);
       });
     })
