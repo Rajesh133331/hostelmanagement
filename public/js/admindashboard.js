@@ -372,7 +372,7 @@ function fetchPaymentHistory() {
 
        btn.addEventListener("click", () => {
        if (confirm("Delete this payment?")) {
-        deletePayment(p._id); // or transactionId
+        deletePayment(p._id);
        }
        });
         li.appendChild(btn)
@@ -382,6 +382,28 @@ function fetchPaymentHistory() {
     .catch((err) => {
       alert("internal server error");
     });
+}
+
+//delete the payment record
+
+function deletePayment(paymentid){
+  let token = localStorage.getItem("token")
+  axios.post("/api/deletepaymentrecord",{paymentid},{
+    headers:{
+      Authorization: "Bearer" + token
+    }
+  }).then((res) => {
+    if (res.data.message === "success") {
+      alert("Payment deleted successfully");
+      loadPaymentHistory();
+    } else {
+      alert("Delete failed");
+    }
+  })
+  .catch((err) => {
+    console.error(err);
+    alert("Failed to delete payment");
+  });
 }
 
 //showing room wise members
