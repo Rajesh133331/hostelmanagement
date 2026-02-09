@@ -4,7 +4,6 @@ window.addEventListener("load", () => {
       headers: { Authorization: "Bearer " + localStorage.getItem("token") },
     })
     .then((res) => {
-      console.log(res);
       document.getElementById("count").innerHTML = res.data;
     });
 });
