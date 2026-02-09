@@ -673,7 +673,7 @@ api.get("/download", (req, res) => {
   }
 });
 //payment delete record
-api.post("/api/deletepaymentrecord",authenticateToken,async(req,res)=>{
+api.post("/deletepaymentrecord",authenticateToken,async(req,res)=>{
 try{
     const {paymentid} = req.body;
     await payment.deleteOne({ _id: paymentid });
