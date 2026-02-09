@@ -680,7 +680,8 @@ try{
    return res.json({message:"success"})
 
 }
-  catch{
+  catch(err){
+    console.log(err.message)
    return res.json({message:"failed"})
   }
   
