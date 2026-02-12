@@ -350,6 +350,10 @@ function showMonthPayments() {
 function fetchPaymentHistory() {
   const phone = document.getElementById("searchPhone").value.trim();
   const obj = { historyphone: phone };
+  axios.post("/api/namesearch", obj).then((res) => {
+    const response = res.data;
+    document.getElementById("username-search").innerHTML = response;
+  });
   axios
     .post("/api/paymenthistory", obj)
     .then((res) => {
