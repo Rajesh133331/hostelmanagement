@@ -265,7 +265,6 @@ document.getElementById("payPhone").addEventListener("blur", () => {
   axios.post("/api/namesearch", obj).then((res) => {
     const response = res.data;
     document.getElementById("verifyName").innerHTML = response;
-    console.log(response);
   });
 });
 
