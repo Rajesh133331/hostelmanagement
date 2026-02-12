@@ -395,7 +395,7 @@ function deletePayment(paymentid){
   }).then((res) => {
     if (res.data.message === "success") {
       alert("Payment deleted successfully");
-      loadPaymentHistory();
+      fetchPaymentHistory();
     } else {
       alert("Delete failed");
     }
