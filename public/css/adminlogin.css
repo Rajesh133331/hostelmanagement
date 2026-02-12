@@ -1,42 +1,14 @@
- /* body {
+ body {
       font-family: Arial, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       /* background: #0F172A; */
-      background: linear-gradient(135deg, #0f172a, #020617);
-    } */
-body {
-  margin: 0;
-  height: 100vh;
-  background: linear-gradient(135deg, #1c1c1c, #0f0f0f);
-  position: relative;
-  overflow: hidden;
-}
-
-body::before {
-  content: "";
-  position: absolute;
-  width: 700px;
-  height: 700px;
-  background: rgba(255, 255, 255, 0.04);
-  transform: rotate(35deg);
-  top: -250px;
-  left: -250px;
-}
+      /* background: linear-gradient(135deg, #0f172a, #020617); */
+    }
 
 
-body::after {
-  content: "";
-  position: absolute;
-  width: 700px;
-  height: 700px;
-  background: rgba(255, 255, 255, 0.03);
-  transform: rotate(-35deg);
-  bottom: -250px;
-  right: -250px;
-}
 
     .container {
       background: #fff;
