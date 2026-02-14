@@ -1,4 +1,20 @@
 // months
+
+window.addEventListener("load", () => {
+  axios
+    .post(
+      "/api/authenticate",
+      {},
+      {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      },
+    )
+    .catch((err) => {
+      console.log("auth failed", err);
+      window.location.href = "/adminlogin";
+    });
+});
+
 var monthNames = [
   "January",
   "February",
