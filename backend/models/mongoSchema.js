@@ -31,6 +31,7 @@ const userSchema = new mongoose.Schema({
   College: { type: String, required: true },
   JoinDate: { type: Date, required: true },
   PhoneNumber: { type: String, required: true, unique: true },
+  Id:{ type: Number, required: true,unique: true }
 });
 
 const paymentSchema = new mongoose.Schema({
@@ -85,6 +86,63 @@ const onlinepaymentSchema = new mongoose.Schema({
   },
 });
 
+//payment link generation
+const paymentlinkSchema = new mongoose.Schema({
+  PhoneNumber: {
+    type: String,
+    required: true,
+  },
+
+  StudentName: {
+    type: String,
+    required: true,
+  },
+
+  Month: {
+    type: String,
+    required: true,
+  },
+
+  Year: {
+    type: Number,
+    required: true,
+  },
+
+  Amount: {
+    type: Number,
+    required: true,
+  },
+
+  Token: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+
+  UTR: {
+    type: String,
+    required: false,
+    unique: true,
+    sparse: true, // allows multiple null values
+  },
+
+  Status: {
+    type: String,
+    required: true,
+    default: "pending", // pending | verification_pending | paid | rejected
+  },
+
+  CreatedAt: {
+    type: Date,
+    default: Date.now,
+  },
+
+  VerifiedAt: {
+    type: Date,
+    required: false,
+  },
+});
+
 const adminuser = mongoose.model("AdminUsers", adminuserSchema);
 const otpverify = mongoose.model("otps", otpSchema);
 const user = mongoose.model("Users", userSchema);
@@ -92,6 +150,7 @@ const payment = mongoose.model("Payments", paymentSchema);
 const vacate = mongoose.model("Vacatedetailslist", vacateSchema);
 const signupuser = mongoose.model("usersignupdetails", signupuserSchema);
 const onlinepayment = mongoose.model("OnlinePayments", onlinepaymentSchema);
+const paymentlink = mongoose.model("PaymentLinks", paymentlinkSchema);
 
 module.exports = {
   adminuser,
@@ -101,4 +160,5 @@ module.exports = {
   vacate,
   signupuser,
   onlinepayment,
+  paymentlink
 };
