@@ -31,7 +31,8 @@ const userSchema = new mongoose.Schema({
   College: { type: String, required: true },
   JoinDate: { type: Date, required: true },
   PhoneNumber: { type: String, required: true, unique: true },
-  Id:{ type: Number, required: true,unique: true }
+  Id:{ type: Number, required: true,unique: true },
+  Vacate:{ type: Boolean, required: true ,default:false}
 });
 
 const paymentSchema = new mongoose.Schema({
@@ -123,13 +124,13 @@ const paymentlinkSchema = new mongoose.Schema({
     type: String,
     required: false,
     unique: true,
-    sparse: true, // allows multiple null values
+    sparse: true, 
   },
 
   Status: {
     type: String,
     required: true,
-    default: "pending", // pending | verification_pending | paid | rejected
+    default: "pending", 
   },
 
   CreatedAt: {
