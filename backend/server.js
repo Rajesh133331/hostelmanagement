@@ -135,7 +135,7 @@ api.post("/loginaccount", async (req, res) => {
         const token = jwt.sign(
           { email: userexist[0].Email },
           process.env.secrettoken,
-          { expiresIn: "30m" },
+          { expiresIn: "15m" },
         );
         return res.json({ data: "success", token, Name: userexist[0].Name });
       } else {
