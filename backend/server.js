@@ -187,6 +187,14 @@ api.post("/onboarduser", async (req, res) => {
     if (userexist) {
       return res.json({ data: "exist" });
     }
+   
+    const lastUser = await user.findOne().sort({ Id: -1 });
+
+    let newId = 1;
+
+   if (lastUser && lastUser.Id) {
+   newId = lastUser.Id + 1;
+   }
     await user.create({
       Name: username,
       Room: userroom,
@@ -194,6 +202,7 @@ api.post("/onboarduser", async (req, res) => {
       College: usercollege,
       JoinDate: new Date(userjoiningdate),
       PhoneNumber: userphone,
+      Id: newId,
     });
     await sendWelcomeSMS(userphone, username, userroom).catch(() => {});
     return res.json({ data: "created" });
