@@ -30,6 +30,10 @@ function logout() {
   }
 }
 
+setTimeout(function () {
+    location.reload();
+  }, 15 * 60 * 1000);
+
 //displaying pending payment for this month
 window.addEventListener("load", () => {
   const months = [
