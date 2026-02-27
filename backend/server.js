@@ -9,6 +9,7 @@ const {
   vacate,
   signupuser,
   onlinepayment,
+  paymentlink
 } = require("./models/mongoSchema");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
