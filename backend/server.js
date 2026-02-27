@@ -243,6 +243,7 @@ api.post("/deleteMember", async (req, res) => {
       JoinDate: userdetails.JoinDate,
       PhoneNumber: userdetails.PhoneNumber,
     });
+    await user.updateOne({_id},{ $set: { Vacate: true } })
     await user.deleteOne({ _id });
     return res.json({ data: "success" });
   } catch (err) {
