@@ -266,6 +266,9 @@ api.post("/editmember", async (req, res) => {
 api.get("/totalhostlers", async (req, res) => {
   try {
     const userscount = await user.aggregate([
+       {
+    $match: { Vacate: false }
+  },
       {
         $count: "Total_users",
       },
