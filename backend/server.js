@@ -215,7 +215,7 @@ api.post("/onboarduser", async (req, res) => {
 //members list
 api.get("/memberslist", async (req, res) => {
   try {
-    const usersdetails = await user.find({}, { __v: 0 });
+    const usersdetails = await user.find({Vacate: false}, { __v: 0 });
     console.log(usersdetails);
     return res.send(usersdetails);
   } catch (err) {
