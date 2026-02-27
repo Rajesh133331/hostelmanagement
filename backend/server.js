@@ -553,7 +553,7 @@ api.post("/pendingmembers", async (req, res) => {
       Month: pendingmonth,
     });
     const pending = await user
-      .find({ PhoneNumber: { $nin: paidphones } }, { __v: 0 })
+      .find({ PhoneNumber: { $nin: paidphones } ,Vacate: false}, { __v: 0 })
       .sort({ Room: 1, Name: 1 });
     return res.send(pending);
   } catch (err) {
